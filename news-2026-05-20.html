@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Summary — 20 May 2026</title>
+  <style>
+    :root {
+      --dark: #0f1b2d; --blue: #0032A0; --light: #e8edf5;
+      --mid: #c5d0e6; --green: #1a7a4a; --amber: #d4820a;
+      --red: #c0392b; --text: #1a1a2e; --muted: #5a6a7a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Calibri, sans-serif; background: var(--light); color: var(--text); font-size: 14px; }
+
+    .header {
+      background: var(--dark);
+      background-image: linear-gradient(135deg, #0f1b2d 0%, #1a2f4e 100%);
+      color: #fff; padding: 28px 36px 24px;
+      border-bottom: 4px solid var(--blue);
+    }
+    .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+    .badge { background: var(--blue); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
+    .header h1 { font-size: 22px; font-weight: 700; }
+    .header-meta { font-size: 12px; color: var(--mid); margin-top: 4px; }
+
+    .body { padding: 28px 36px 48px; max-width: 1100px; }
+
+    .news-category { background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 16px; }
+    .category-title {
+      font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 14px;
+      padding: 8px 14px; border-radius: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .category-title.malaysia { background: linear-gradient(135deg, #0032A0, #0050c8); }
+    .category-title.global   { background: linear-gradient(135deg, #1a7a4a, #22a86a); }
+    .category-title.iranus  { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .category-title.tech    { background: linear-gradient(135deg, #6c3483, #9b59b6); }
+
+    .news-item { border-left: 3px solid var(--mid); padding: 10px 14px; margin-bottom: 10px; background: #f4f7fc; border-radius: 6px; }
+    .news-item:last-child { margin-bottom: 0; }
+    .news-headline { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; line-height: 1.4; }
+    .news-meta { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+    .news-summary { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .news-source { font-size: 11px; font-weight: 700; color: var(--blue); margin-top: 4px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .stat-card { background: #fff; border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 4px rgba(0,0,0,.08); border-top: 4px solid var(--blue); }
+    .stat-card.g { border-top-color: var(--green); }
+    .stat-card.a { border-top-color: var(--amber); }
+    .stat-card.r { border-top-color: var(--red); }
+    .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .stat-value { font-size: 20px; font-weight: 700; color: var(--dark); }
+
+    @media (max-width: 700px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .header { padding: 20px 20px 16px; } .body { padding: 20px 20px 36px; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div style="margin-bottom:10px">
+    <a href="index.html" style="color:#fff;font-size:12px;font-weight:700;text-decoration:none;background:var(--blue);padding:5px 12px;border-radius:6px;">← Back to Index</a>
+  </div>
+  <div class="header-top">
+    <span class="badge">NEWS</span>
+    <h1>News Summary — 20 May 2026</h1>
+  </div>
+  <div class="header-meta">Auto-generated from get-news skill · Last 24 hours</div>
+</div>
+
+<div class="body">
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">🇲🇾 Malaysia</div>
+      <div class="stat-value" id="cnt-my">10</div>
+    </div>
+    <div class="stat-card g">
+      <div class="stat-label">🌍 Global</div>
+      <div class="stat-value" id="cnt-gl">5</div>
+    </div>
+    <div class="stat-card a">
+      <div class="stat-label">⚔️ Iran-US</div>
+      <div class="stat-value" id="cnt-iran">10</div>
+    </div>
+    <div class="stat-card r">
+      <div class="stat-label">🤖 Tech/AI</div>
+      <div class="stat-value" id="cnt-tech">8</div>
+    </div>
+  </div>
+
+  <!-- Malaysia Section -->
+  <div class="news-category">
+    <div class="category-title malaysia">🇲🇾 Malaysia</div>
+    <div id="news-malaysia">
+      <div class="news-item">
+        <div class="news-headline">Malaysia demands over RM1bil from Norwegian defence firm over axed missile deal</div>
+        <div class="news-meta">Free Malaysia Today · 19 May 2026</div>
+        <div class="news-summary">Malaysia is seeking more than RM1 billion in compensation from a Norwegian defence firm after the cancellation of a major missile procurement deal, escalating a diplomatic row over licence terms.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia ends defence procurement from Norway over missile licence row</div>
+        <div class="news-meta">NST Online · 19 May 2026</div>
+        <div class="news-summary">Kuala Lumpur has formally ended all defence procurement from Norway following a licensing dispute, with officials warning regional nations against similar deals.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia seeks more than $250 million from Norway over axed defence deal</div>
+        <div class="news-meta">Reuters · 19 May 2026</div>
+        <div class="news-summary"> Malaysia's government has demanded over $250 million in compensation from the Norwegian firm, in one of the largest diplomatic commercial disputes in recent years.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia's Coalition Tensions Deepen as Anwar Floats Snap Poll</div>
+        <div class="news-meta">Bloomberg · 18 May 2026</div>
+        <div class="news-summary">Prime Minister Anwar Ibrahim has signalled the possibility of a snap election as coalition tensions rise, with political observers watching the government's stability closely.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia beats growth forecasts despite oil price surge above US$100</div>
+        <div class="news-meta">Malay Mail · 19 May 2026</div>
+        <div class="news-summary"> Anwar cited strong economic performance beating expectations even as global oil prices topped US$100, pointing to resilient domestic fundamentals.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">New Malaysian passport to be rolled out from June 1</div>
+        <div class="news-meta">Free Malaysia Today · 19 May 2026</div>
+        <div class="news-summary"> Malaysia will begin issuing a new-generation passport from June 1, with enhanced security features and updated biometric capabilities.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia auto sales rise 17% in April on higher production, new model launches</div>
+        <div class="news-meta">The Star · 19 May 2026</div>
+        <div class="news-summary">Vehicle sales in Malaysia surged 17% year-on-year in April to 72,113 units, driven by new model launches and increased production capacity.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Zeekr Malaysia is now the country's top premium EV brand</div>
+        <div class="news-meta">Zigwheels · 19 May 2026</div>
+        <div class="news-summary"> Chinese premium EV brand Zeekr has become Malaysia's leading premium electric vehicle brand by sales volume, according to industry data.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia eyes over 2 million Indian tourists by 2026 amid tourism growth</div>
+        <div class="news-meta">Qazinform · 19 May 2026</div>
+        <div class="news-summary"> Malaysia is targeting over two million Indian tourists in 2026 as part of a broader tourism growth strategy targeting key source markets.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Malaysia's inflation rate remains stable, lower than regional peers</div>
+        <div class="news-meta">The Star · 19 May 2026</div>
+        <div class="news-summary"> Malaysia's inflation has remained steady and below regional averages, providing the central bank with room to maintain its supportive monetary stance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Section -->
+  <div class="news-category">
+    <div class="category-title global">🌍 Global</div>
+    <div id="news-global">
+      <div class="news-item">
+        <div class="news-headline">Ebola Outbreak in Central Africa Could Last Months, W.H.O. Says</div>
+        <div class="news-meta">The New York Times · 19 May 2026</div>
+        <div class="news-summary">The WHO warned the Ebola outbreak centred in the Democratic Republic of Congo could persist for months, with the death toll rising sharply and international concern growing.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Ebola deaths rise sharply as outbreak's 'scale and speed' worry WHO chief</div>
+        <div class="news-meta">NBC News · 19 May 2026</div>
+        <div class="news-summary">The WHO Director-General expressed alarm at the rapid spread and mounting fatalities, declaring a public health emergency of international concern.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">US warns Russia after Moscow threatens Latvia: 'Nato membership will not protect you'</div>
+        <div class="news-meta">The Guardian · 19 May 2026</div>
+        <div class="news-summary">The United States warned Russia after Moscow issued direct threats against Latvia, with Washington asserting that NATO membership provides no shield against escalation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Trump says US may strike Iran again but that Tehran wants deal</div>
+        <div class="news-meta">Reuters · 19 May 2026</div>
+        <div class="news-summary"> President Trump said the US may carry out additional military strikes on Iran while claiming Tehran is willing to reach a negotiated agreement to end the conflict.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Granite Xhaka to captain Switzerland as World Cup 2026 squad revealed</div>
+        <div class="news-meta">ESPN · 19 May 2026</div>
+        <div class="news-summary">Switzerland named its squad for the 2026 FIFA World Cup with Granit Xhaka as captain, with the tournament now just weeks away.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Iran-US Section -->
+  <div class="news-category">
+    <div class="category-title iranus">⚔️ Iran-US Conflict</div>
+    <div id="news-iranus">
+      <div class="news-item">
+        <div class="news-headline">Trump says US to attack Iran in 'two or three days' if no deal is reached</div>
+        <div class="news-meta">Al Jazeera · 19 May 2026</div>
+        <div class="news-summary">President Trump issued an ultimatum, warning Iran it faces strikes within two to three days if no agreement is reached, while simultaneously crediting Gulf states for averting a scheduled attack.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">JD Vance says US remains 'locked and loaded' to restart military campaign</div>
+        <div class="news-meta">The Guardian · 19 May 2026</div>
+        <div class="news-summary">Vice President JD Vance said the US is prepared to resume its military campaign against Iran, as Tehran warned of "new fronts" opening in the conflict.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Trump calls off scheduled attack on Iran amid 'serious negotiations'</div>
+        <div class="news-meta">CBS News · 18 May 2026</div>
+        <div class="news-summary">Trump announced the postponement of a planned strike on Iran, saying serious negotiations toward a peace deal were underway after Gulf states urged de-escalation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Iran war day 81: Trump delays attack; Tehran says won't 'surrender'</div>
+        <div class="news-meta">Al Jazeera · 19 May 2026</div>
+        <div class="news-summary">On day 81 of the conflict, Iran rejected any notion of surrender while welcoming the US decision to delay strikes, with diplomatic channels now active through Pakistani mediation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">US rejects new Iranian proposal to end war: Report</div>
+        <div class="news-meta">The Hill · 18 May 2026</div>
+        <div class="news-summary">The US rejected Iran's revised proposal for ending the war, according to sources familiar with the matter, though both sides continue to exchange proposals through intermediaries.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Iran sends response to US proposal via mediator Pakistan</div>
+        <div class="news-meta">Al Jazeera · 18 May 2026</div>
+        <div class="news-summary">Iran has delivered its formal response to the latest US proposal through Pakistan, which has been serving as an intermediary between Washington and Tehran.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">US, Iran exchange several proposals to avoid more conflict: Report</div>
+        <div class="news-meta">Anadolu Ajansı · 19 May 2026</div>
+        <div class="news-summary">Multiple proposals have been exchanged between Washington and Tehran in recent days as both sides seek a diplomatic off-ramp to the ongoing military standoff.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Trump warns Tehran 'clock is ticking' after phone call with Netanyahu</div>
+        <div class="news-meta">The Independent · 18 May 2026</div>
+        <div class="news-summary"> Trump's warning to Tehran came following a call with Israeli Prime Minister Netanyahu, as the US reaffirmed its commitment to preventing Iran from acquiring nuclear weapons.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Vance: US prefers diplomatic solution but 'locked and loaded' to resume war</div>
+        <div class="news-meta">The Times of Israel · 19 May 2026</div>
+        <div class="news-summary">JD Vance stated the US preference for a diplomatic resolution but reinforced that American military forces remain ready to resume hostilities if negotiations fail.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Trump considers 'another big hit' on Iran amid peace talks</div>
+        <div class="news-meta">USA Today · 19 May 2026</div>
+        <div class="news-summary"> Trump signaled he is considering additional military action against Iran even as indirect peace talks continue, maintaining pressure while testing diplomatic waters.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech/AI Section -->
+  <div class="news-category">
+    <div class="category-title tech">🤖 Technology & AI</div>
+    <div id="news-tech">
+      <div class="news-item">
+        <div class="news-headline">Google Changes Its Search Box for the First Time in 25 Years — AI-Powered</div>
+        <div class="news-meta">The New York Times · 19 May 2026</div>
+        <div class="news-summary">Google unveiled a completely redesigned search experience powered by AI at I/O 2026, fundamentally changing how its core search product works for the first time in a quarter-century.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Google Unveils New Gemini AI Agent for Personal Tasks</div>
+        <div class="news-meta">WSJ · 19 May 2026</div>
+        <div class="news-summary">Google announced a new Gemini-powered AI agent designed to handle personal tasks autonomously, marking a major step in its agentic AI push at I/O 2026.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Anthropic Hires OpenAI Co-Founder Andrej Karpathy</div>
+        <div class="news-meta">CNBC · 19 May 2026</div>
+        <div class="news-summary">Anthropic has hired Andrej Karpathy, the OpenAI co-founder and former Tesla AI leader, in a significant move that reshapes the competitive landscape of AI talent.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Meta Begins Laying Off 8,000 Employees Amid AI Transformation</div>
+        <div class="news-meta">The New York Times · 19 May 2026</div>
+        <div class="news-summary">Meta has begun cutting 8,000 jobs as it accelerates its transition to an AI-first operating model, with affected workers offered roles in the company's new AI divisions.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Meta Reorganizing Thousands of Workers' Jobs Around AI: 'Transfers aren't optional'</div>
+        <div class="news-meta">The Guardian · 19 May 2026</div>
+        <div class="news-summary">Meta is forcibly redeploying thousands of employees into AI roles, with internal communications making clear the transfers are mandatory as the company restructures around artificial intelligence.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">NVIDIA CEO Jensen Huang: 'Demand Is Going Parabolic, Utterly Parabolic'</div>
+        <div class="news-meta">NVIDIA Blog · 18 May 2026</div>
+        <div class="news-summary">At Dell Technologies World, NVIDIA CEO Jensen Huang described AI chip demand as "utterly parabolic," underscoring the explosive growth fuelling the company's valuation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">US Lawmakers Seek to Undercut Chinese AI and Tech Sales Abroad</div>
+        <div class="news-meta">Reuters · 19 May 2026</div>
+        <div class="news-summary">Bipartisan US legislation aims to counter Chinese AI and technology exports by restricting foreign adversaries' access to American AI chips and platforms overseas.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">Why the AI Industry Is the Real Winner of the Musk-Altman Trial</div>
+        <div class="news-meta">BBC · 19 May 2026</div>
+        <div class="news-summary">Analysts say the legal battle between Elon Musk and Sam Altman/OpenAI has ultimately validated and accelerated investment in the broader AI ecosystem, to everyone's surprise.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:20px 36px;font-size:12px;color:var(--muted);border-top:1px solid var(--mid);margin-top:8px">
+    Generated by OpenClaw get-news skill · <span id="gen-time">20 May 2026, 06:00 AM (MYT)</span>
+  </div>
+</div>
+
+</body>
+</html>
